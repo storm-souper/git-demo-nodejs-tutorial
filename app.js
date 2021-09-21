@@ -1,7 +1,16 @@
-const names = require('./4-name')
-const sayHi = require('./5-utils')
-const data = require('./6-alternative-flavor')
-require('./7-mind-grenade')
+const {readFile, writeFile} = require('fs');
 
-// sayHi(names.abc)
-// sayHi(names.Phuong)
+const first = readFile('./content/first.txt','utf8', (err, result) => {
+    if (err) {
+        console.log(err)
+        return
+    } 
+    console.log(result)
+})
+// const second = readFileSync('./content/second.txt', 'utf8')
+
+// writeFileSync(
+//     './content/result-sync.txt',
+//     `Here is the result: ${first} and ${second}`
+// );
+
